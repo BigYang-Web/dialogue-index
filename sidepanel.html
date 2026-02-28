@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <style>
+        body {
+            font-family: -apple-system, sans-serif;
+            padding: 10px;
+            background: #f9fafb;
+            margin: 0;
+        }
+
+        .header {
+            position: sticky;
+            top: 0;
+            background: #f9fafb;
+            padding: 5px 0 10px;
+            z-index: 10;
+            border-bottom: 1px solid #eee;
+        }
+
+        .search-input {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            outline: none;
+        }
+
+        #list {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+            margin-top: 10px;
+        }
+
+        .message-group {
+            background: #fff;
+            border: 1px solid #f0f0f0;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .nav-item {
+            display: flex;
+            align-items: center;
+            padding: 10px;
+            cursor: pointer;
+        }
+
+        .nav-item:hover {
+            background: #f3f8ff;
+        }
+
+        .role-tag {
+            font-size: 10px;
+            padding: 2px 5px;
+            border-radius: 4px;
+            margin-right: 8px;
+            flex-shrink: 0;
+        }
+
+        .role-user {
+            background: #dbeafe;
+            color: #1e40af;
+        }
+
+        .role-ai {
+            background: #dcfce7;
+            color: #166534;
+        }
+
+        .fold-arrow {
+            font-size: 9px;
+            color: #9ca3af;
+            margin-right: 6px;
+            transition: transform 0.2s ease;
+        }
+
+        .content-preview {
+            font-size: 13px;
+            color: #374151;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            flex: 1;
+        }
+
+        .sub-headers-container {
+            background: #fafafa;
+            border-top: 1px solid #f0f0f0;
+        }
+
+        .sub-item {
+            padding: 8px 12px 8px 32px;
+            font-size: 12px;
+            color: #4b5563;
+            border-bottom: 1px solid #f3f4f6;
+            cursor: pointer;
+        }
+
+        .sub-item:hover {
+            color: #3b82f6;
+            background: #f0f7ff;
+        }
+
+        .sub-item.h2 {
+            padding-left: 48px;
+        }
+
+        .sub-item.h3 {
+            padding-left: 62px;
+        }
+
+        .sub-icon {
+            color: #ccc;
+            margin-right: 5px;
+        }
+
+        .status-tip {
+            text-align: center;
+            color: #9ca3af;
+            font-size: 12px;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="header"><input type="text" id="search" class="search-input" placeholder="搜索对话或标题..."></div>
+    <div id="list">
+        <div class="status-tip">正在载入对话目录...</div>
+    </div>
+    <script src="sidepanel.js"></script>
+</body>
+
+</html>

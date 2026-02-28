@@ -1,0 +1,50 @@
+{
+    "manifest_version": 3,
+    "name": "AI对话目录",
+    "version": "1.0.0",
+    "permissions": [
+        "sidePanel",
+        "tabs",
+        "activeTab",
+        "scripting"
+    ],
+    "host_permissions": [
+        "https://www.doubao.com/*",
+        "https://www.qianwen.com/*",
+        "https://chat.deepseek.com/*",
+        "https://gemini.google.com/*",
+        "https://chatgpt.com/*",
+        "https://yuanbao.tencent.com/*"
+    ],
+    "background": {
+        "service_worker": "background.js"
+    },
+    "content_scripts": [
+        {
+            "matches": [
+                "https://www.doubao.com/*",
+                "https://www.qianwen.com/*",
+                "https://chat.deepseek.com/*",
+                "https://yuanbao.tencent.com/*",
+                "https://chatgpt.com/*",
+                "https://gemini.google.com/*"
+            ],
+            "js": [
+                "content.js"
+            ],
+            "run_at": "document_end",
+            "type": "module"
+        }
+    ],
+    "side_panel": {
+        "default_path": "sidepanel.html"
+    },
+    "action": {
+        "default_title": "打开对话目录"
+    },
+    "icons": {
+        "16": "icons/icon16.png",
+        "48": "icons/icon48.png",
+        "128": "icons/icon128.png"
+    }
+}
